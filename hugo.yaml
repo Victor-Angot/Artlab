@@ -1,0 +1,188 @@
+baseURL: ''
+title: Artlab
+languageCode: fr-fr
+DefaultContentLanguage: fr
+enableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: true
+canonifyURLs: true
+paginate: 9
+darkmode_js:
+  - assets/js/darkmode.js
+enableInlineShortcodes: true
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer:
+        apostrophe: '&rsquo;'
+        disable: false
+        ellipsis: '&hellip;'
+        emDash: '&mdash;'
+        enDash: '&ndash;'
+        leftAngleQuote: '&laquo;'
+        leftDoubleQuote: '&ldquo;'
+        leftSingleQuote: '&lsquo;'
+        rightAngleQuote: '&raquo;'
+        rightDoubleQuote: '&rdquo;'
+        rightSingleQuote: '&rsquo;'
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+
+params:
+  author: les zartistes
+  authorimage: ../assets/images/global/author.webp
+  og_image: /images/mains.png
+  moto: "La créativité au service de l'innovation"
+  description: "Artlab est une plateforme qui met en relation des artistes locaux avec des entreprises, des écoles et des incubateurs pour initier les participants au processus de création artistique. Des ateliers immersifs pour stimuler l'innovation, la cohésion d'équipe et le bien-être mental."
+  disable_theme_toggle: false
+  disable_stay_uptodate: false
+
+  p1:
+    heading: "Notre mission"
+    image: "images/pages/ampoule.png"
+    content:
+      - text: "Chez Artlab, nous croyons que la créativité est la clé de l'innovation. Nous mettons en relation des artistes locaux avec des entreprises, des écoles et des incubateurs pour favoriser la créativité à travers des ateliers artistiques pratiques et immersifs."
+      - text: "Notre mission est d'utiliser le processus créatif pour stimuler l'innovation, aider les organisations à devancer leurs concurrents, et renforcer la cohésion des équipes tout en améliorant la santé mentale et en réduisant les tensions au travail."
+  p2:
+    heading: "Une expérience enrichissante pour tous"
+    image: "images/pages/pinceaux.jpeg"
+    content:
+      - text: "Durant nos ateliers de 4 heures, les participants sont invités à créer à partir de rien, guidés par des artistes professionnels qui les aident à concrétiser leurs idées. Nous offrons un espace unique où créativité et collaboration s'épanouissent."
+      - text: "Nos ateliers sont conçus pour libérer la créativité et l'innovation au sein des équipes. En s'engageant dans un processus artistique guidé, les participants apprennent à penser différemment et à développer des idées novatrices qui peuvent propulser le succès de leur entreprise."
+  p3:
+    heading: "Soutenus par des artistes passionnés"
+    image: "images/pages/artiste.png"
+    content:
+      - text: "Nos artistes partenaires sont des professionnels expérimentés qui apportent leur passion pour la créativité à chaque atelier. Ils guident les participants à travers le processus artistique, veillant à ce que chacun se sente à l'aise pour exprimer sa créativité, quel que soit son parcours ou son niveau de compétence."
+    links:
+      - text: "Rencontrez nos artistes partenaires"
+        url: "/artistes/"
+    logos:
+      - identifier: a
+        image: "images/global/artiste.png"
+        alt: "a"
+      - identifier: b
+        image: "images/global/sculpture.jpg"
+        alt: "b"
+      - identifier: c
+        image: "images/global/peinture.jpg"
+        alt: "c"
+      - identifier: d
+        image: "images/global/vieux.jpg"
+        alt: "d"
+  # p4:
+  #   heading: "Blog"
+  #   content:
+  #     - text: "Découvrez nos articles sur l'importance de la créativité en entreprise, les bienfaits de l'art sur la santé mentale, et bien plus encore."
+  p5:
+    heading: "Restez informé"
+    content:
+      - text: "Abonnez-vous à notre newsletter pour rester informé des prochains ateliers, événements et conseils créatifs de nos artistes."
+    action: "#"
+    label: "Adresse email"
+    placeholder: "Entrez votre email"
+    button: "Me notifier"
+
+  social_media:
+    github:
+      enabled: false
+      url: 'https://github.com/leszartistes'
+    facebook:
+      enabled: true
+      url: 'https://facebook.com/leszartistes'
+    instagram:
+      enabled: true
+      url: 'https://instagram.com/leszartistes'
+    twitter:
+      enabled: false
+      url: 'https://twitter.com/leszartistes'
+    
+menu:
+  main:
+    - identifier: ateliers
+      name: Ateliers
+      url: /ateliers/
+      weight: 10
+    - identifier: about
+      name: À propos
+      url: /about/
+      weight: 20
+    - identifier: artistes
+      name: Nos artistes
+      url: /artistes/
+      weight: 30
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 40
+  footer:
+    - identifier: about
+      name: À propos
+      url: /about/
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 20
+    - identifier: ateliers
+      name: Ateliers
+      url: /ateliers/
+      weight: 30
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 40
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  category: Catégories
+  tag: Tags
+
+privacy:
+  disqus:
+    disable: false
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: false
+    useSessionStorage: false
+  instagram:
+    disable: false
+    simple: false
+  twitter:
+    disable: false
+    enableDNT: false
+    simple: false
+  vimeo:
+    disable: false
+    enableDNT: false
+    simple: false
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.114.0"
