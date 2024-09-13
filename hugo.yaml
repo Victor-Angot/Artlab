@@ -133,17 +133,17 @@ menu:
       url: /contact/
       weight: 40
   footer:
-    - identifier: about
-      name: À propos
-      url: /about/
-      weight: 10
-    - identifier: blog
-      name: Blog
-      url: /blog/
-      weight: 20
     - identifier: ateliers
       name: Ateliers
       url: /ateliers/
+      weight: 10
+    - identifier: about
+      name: À propos
+      url: /about/
+      weight: 20
+    - identifier: artistes
+      name: Nos artistes
+      url: /artistes/
       weight: 30
     - identifier: contact
       name: Contact
