@@ -10,7 +10,7 @@ description: page de contact
 
 <section class="lg:pb-24">
   <div class="max-w-screen-md px-4 mx-auto">
-      <p class="mb-8 font-light text-center text-gray-500 lg:mb-16 dark:text-gray-400 sm:text-xl">Vous êtes intérressé par nos ateliers ? Vous souhaitez bénéficier d'une séance d'essai gratuite ? Faites-le nous savoir.</p>
+      <p class="mb-8 font-light text-center text-gray-500 lg:mb-16 dark:text-gray-400 sm:text-xl">Vous êtes intéressé par nos ateliers ? Vous souhaitez bénéficier d'une séance d'essai gratuite ? Faites-le nous savoir.</p>
       <form name="contact" action="https://formsubmit.co/your@email.com" method="POST" class="space-y-8">
           <div class="my-4">
               <label for="email" class="block mb-2 font-medium text-gray-900 text-md dark:text-gray-300"><strong>Votre e-mail :</strong></label>

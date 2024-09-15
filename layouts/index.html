@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main>
-    <div class="bg-gray-200 dark:bg-gray-900">
+    <!-- <div class="bg-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl px-4 py-8 mx-auto">
             <div class="grid items-center gap-8 mb-8 sm:mb-0 lg:gap-12 lg:grid-cols-12">
                 <div class="col-span-6 px-4 text-center sm:mb-6 lg:text-left lg:mb-0">
@@ -26,7 +26,41 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+
+    <div class="bg-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto">
+        <div class="grid gap-8 mb-8 sm:mb-0 lg:grid-cols-1">
+            <!-- Section pour le texte -->
+            <div class="text-center">
+                <h1 class="mb-2 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
+                    {{ .Site.Title }}
+                </h1>
+                <h1 class="mb-2 text-4xl font-extrabold font-light leading-none tracking-tight text-violet-400 dark:text-violet-400 md:text-5xl">
+                    {{ .Site.Params.Moto }}
+                </h1>
+                <p class="max-w-xl mx-auto mb-6 font-normal text-gray-900 lg:mx-auto xl:mb-2 md:text-lg xl:text-xl dark:text-gray-50">
+                    {{ .Site.Params.Description }}
+                </p>
+            </div>
+            <!-- Section pour la vidéo -->
+            <div class="flex justify-center">
+                {{ $video := resources.GetMatch "video/test.mp4" }}
+                {{ if $video }}
+                <video class="w-5/6 max-w-full h-auto mx-auto rounded-lg" controls autoplay muted>
+                    <source src="{{ $video.RelPermalink }}" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+                {{ else }}
+                <p>Vidéo non trouvée. Veuillez vérifier le chemin du fichier.</p>
+                {{ end }}
+            </div>
+        </div>
     </div>
+</div>
+
+
 
     <!-- More main page content here... -->
 
@@ -119,7 +153,7 @@
     </div>
 
 
-<!-- Sponsors section -->
+<!-- Artiste section -->
 <div class="max-w-md px-4 mx-auto md:pt-24 md:pb-16 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-24">
         <!-- Conteneur des images, suppression des marges et ajout de gap-0 -->
@@ -128,10 +162,10 @@
             <!-- Conteneur de chaque image pour contrôler la taille et le recadrage -->
             <div class="flex justify-center col-span-1 bg-gray-50 dark:bg-gray-900/10 overflow-hidden"> <!-- Suppression des px-8 py-8 -->
                 {{ if .image }}
-                {{ $sponsor := resources.Get (replace .image ".svg" ".png") }} <!-- Remplace .svg par .png -->
+                <!-- {{ $sponsor := resources.Get (replace .image ".svg" ".png") }} Remplace .svg par .png -->
                 <img src="{{ $sponsor.RelPermalink }}" class="w-full h-full object-cover" alt="{{ .alt }}" loading="lazy" /> <!-- Utilisation de w-full et h-full -->
                 {{ else }}
-                {{ $sponsor := resources.Get "images/global/sample-logo.png" }} <!-- Utilise une image PNG par défaut -->
+                {{ $sponsor := resources.Get "images/global/sample-logo.svg" }} <!-- Utilise une image PNG par défaut -->
                 <img src="{{ $sponsor.RelPermalink }}" class="w-full h-full object-cover" alt="{{ .alt }}" loading="lazy" /> <!-- Utilisation de w-full et h-full -->
                 {{ end }}
             </div>
@@ -156,6 +190,45 @@
         </div>
     </div>
 </div>
+
+  <!-- Sponsors section -->
+<div class="max-w-md px-4 mx-auto md:pt-24 md:pb-16 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-24">
+        <!-- Titre de la section partenaires -->
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl lg:col-span-2 text-center">
+            {{ .Site.Params.Partners.Heading }}
+        </h2>
+        
+        <!-- Carrousel des logos partenaires -->
+        <div class="relative mt-12 lg:mt-0 lg:col-span-2 overflow-hidden">
+            <div class="flex space-x-8 animate-scroll">
+                {{ range .Site.Params.Partners.Logos }}
+                <div class="flex-shrink-0">
+                    <img src="{{ .image }}" alt="{{ .alt }}" class="h-24 w-auto object-contain">
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ajouter le CSS pour l'animation -->
+<style>
+    .animate-scroll {
+        display: flex;
+        animation: scroll 20s linear infinite;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
 
 
     <!-- Blog section -->
