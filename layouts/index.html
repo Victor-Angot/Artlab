@@ -46,7 +46,7 @@
             </div>
             <!-- Section pour la vidéo -->
             <div class="flex justify-center">
-                {{ $video := resources.GetMatch "video/test.mp4" }}
+                {{ $video := resources.GetMatch "video/test2.mp4" }}
                 {{ if $video }}
                 <video class="w-5/6 max-w-full h-auto mx-auto rounded-lg" controls autoplay muted>
                     <source src="{{ $video.RelPermalink }}" type="video/mp4">
@@ -118,7 +118,7 @@
                             {{ .Site.Params.P2.Heading }}
                         </h2>
                         {{ range .Site.Params.P2.Content }}
-                        <p class="pb-12 mt-6 text-lg text-gray-900 dark:text-white">
+                        <p class="pb-6 mt-6 text-lg text-gray-900 dark:text-white">
                             {{ .text }}
                         </p>
                         {{ end }}
@@ -182,7 +182,7 @@
             {{ end }}
             {{ range .Site.Params.P3.Links }}
             <div class="my-6">
-                <a href="{{ .url }}" class="text-base font-medium text-primary-400 dark:text-primary-100">
+                <a href="{{ .url }}" class="text-base font-medium text-violet-400 dark:text-violet-400 hover">
                     {{ .text }}&nbsp&rarr;
                 </a>
             </div>
